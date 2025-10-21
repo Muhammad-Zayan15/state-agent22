@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ZAKI REAL STATE - Client Info</title>
+  <style>
+    /* style.css - fixed responsive version */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root{
+  --accent:#e5892f; /* orange like image */
+  --dark:#2b2b2b;
+  --muted:#f5f3f2;
+  --glass: rgba(255,255,255,0.95);
+}
+
+/* global resets + box-sizing */
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll on mobile */
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif;}
+
+body{
+  background: linear-gradient(#6b4a34, #3f2620); /* deep brown gradient like photo bottom */
+  min-height:100vh;
+  display:flex;
+  align-items:flex-start; /* flex-start is standard */
+  justify-content:center;
+  padding:40px 20px;
+  color:#222;
+}
+
+/* container to mimic glass office window feel - now responsive */
+.container{
+  width:100%;
+  max-width:920px; /* keeps layout same on desktop but responsive on mobile */
+  background:var(--glass);
+  border-radius:8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  overflow:hidden;
+}
+
+/* top area: left logo + title + call us on right */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 28px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,248,247,0.9));
+  border-bottom:4px solid rgba(0,0,0,0.04);
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo{
+  width:54px;
+  height:54px;
+  background:linear-gradient(135deg,#fff,#f1f1f1);
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid var(--accent);
+  color:var(--accent);
+  font-weight:700;
+  font-size:20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12) inset;
+}
+.title{
+  font-size:22px;
+  color:var(--dark);
+  font-weight:700;
+  letter-spacing:1px;
+}
+.subtitle{
+  font-size:12px;
+  color:#666;
+  margin-top:4px;
+}
+
+/* call area */
+.callbox{
+  text-align:right;
+  min-width:120px;
+}
+.callbox .call-label{
+  font-size:12px;color:#666;margin-bottom:4px;display:block;
+}
+.callbox .call-number{
+  font-size:18px;color:var(--accent);font-weight:700;
+}
+
+/* main content with two columns: form left, details right */
+.content{
+  display:flex;
+  gap:20px;
+  padding:22px 28px 32px 28px;
+  flex-wrap:wrap; /* allow wrapping on small screens */
+}
+
+/* left: form card */
+.form-card{
+  flex: 1 1 60%;
+  min-width: 260px; /* prevents too narrow column */
+  background:#fff;
+  border-radius:6px;
+  padding:18px;
+  border:1px solid rgba(0,0,0,0.04);
+}
+.section-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:var(--accent);
+  color:white;
+  padding:10px 14px;
+  border-radius:4px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+.field-row{
+  display:flex;
+  gap:12px;
+  margin-bottom:12px;
+  flex-wrap:wrap; /* let fields wrap to next line on small screens */
+}
+.field{
+  flex:1 1 0;
+  display:flex;
+  flex-direction:column;
+  min-width: 0; /* important so flex children can shrink */
+}
+.field label{
+  font-size:12px;
+  color:#666;
+  margin-bottom:6px;
+}
+.field input[type="text"],
+.field input[type="email"],
+.field textarea{
+  padding:10px 12px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:14px;
+  outline:none;
+  width:100%;
+  background:#fff;
+}
+.field input[type="text"]:focus,
+.field input[type="email"]:focus,
+.field textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 4px 18px rgba(229,137,47,0.12);
+}
+.field.small{flex:0.8;min-width:140px;}
+
+/* textarea */
+textarea{min-height:110px;resize:vertical;}
+
+/* submit */
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:8px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.btn{
+  background:var(--accent);
+  color:white;
+  padding:10px 16px;
+  border-radius:6px;
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow: 0 6px 18px rgba(229,137,47,0.18);
+}
+.back {
+  display: inline-block;
+  margin: 6px 0 0 0;
+  background:var(--accent);
+  color:white;
+  padding:10px 16px;
+  border-radius:6px;
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow: 0 6px 18px rgba(229,137,47,0.18);
+  text-decoration: none;
+}
+.btn.secondary{
+  background:#f3f3f3;color:#333;margin-right:10px;
+  box-shadow:none;
+}
+
+/* right column: info / contact card */
+.info-card{
+  flex: 1 1 32%;
+  min-width: 240px;
+  background:#fff;
+  border-radius:6px;
+  padding:14px;
+  border:1px solid rgba(0,0,0,0.04);
+}
+.info-card h3{
+  margin-bottom:8px;color:var(--dark);
+}
+.info-card .muted{color:#666;font-size:13px;margin-bottom:12px;}
+.contact-item{display:flex;gap:10px;align-items:center;margin-bottom:10px;}
+.contact-item .icon{
+  width:44px;height:44px;border-radius:6px;background:linear-gradient(180deg,#fff,#fafafa);
+  display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,0.04);color:var(--accent);font-weight:700;
+}
+
+/* small footer */
+.footer{
+  background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.03));
+  padding:10px 18px;
+  font-size:13px;
+  color:#555;
+  text-align:center;
+}
+
+/* responsive tweaks */
+@media (max-width:920px){
+  body { padding:24px 12px; }
+  .container{width:100%;max-width:100%;}
+  .content{flex-direction:column;padding:18px;}
+  .form-card,.info-card{width:100%;flex:1 1 100%;min-width:0;}
+  .topbar{padding:14px 16px;gap:8px;}
+  .title{font-size:18px;}
+  .callbox .call-number{font-size:16px;}
+  .section-header{padding:8px 10px;font-size:15px;}
+  textarea{min-height:90px;}
+  .logo { width:48px;height:48px;font-size:18px }
+}
+
+/* very small screens */
+@media (max-width:420px){
+  body { padding:16px 10px; }
+  .topbar{flex-direction:column;align-items:flex-start;gap:10px;padding:12px;}
+  .callbox{text-align:left;width:100%;}
+  .field-row{gap:8px;}
+  .actions{justify-content:center;}
+  .title{font-size:16px;}
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">ZR</div>
+        <div>
+          <div class="title">ZAKI REAL STATE</div>
+          <div class="subtitle">Real Estate Solutions</div>
+        </div>
+      </div>
+      <div class="callbox" aria-label="Call us">
+        <div class="call-label">Call us</div>
+        <div class="call-number">0315-0231591</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- FORM -->
+      <div class="form-card">
+        <div class="section-header">ZAKI REAL STATE</div>
+
+        <!-- Web3Forms Integrated Form -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="form" novalidate>
+          <input type="hidden" name="access_key" value="ef1886f8-baf7-45a9-aa18-ea3b4a5695e1">
+
+          <div style="margin-bottom:14px;">
+            <div class="field-row">
+              <div class="field">
+                <label for="fullName">Full Name</label>
+                <input type="text" name="name" id="fullName" placeholder="Enter full name" required>
+              </div>
+              <div class="field">
+                <label for="spouse">Spouse (if any)</label>
+                <input type="text" name="spouse" id="spouse" placeholder="Spouse name">
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" placeholder="Street address">
+              </div>
+              <div class="field small">
+                <label for="citystate">City / State / Zip</label>
+                <input type="text" name="citystate" id="citystate" placeholder="City, State, ZIP">
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" placeholder="Phone number" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email address" required>
+              </div>
+            </div>
+
+            <div style="margin-top:6px;">
+              <div class="field">
+                <label for="propaddr">Property Address (if different)</label>
+                <input type="text" name="property" id="propaddr" placeholder="Property address">
+              </div>
+            </div>
+          </div>
+
+          <!-- Comment / review box -->
+          <div class="section-header" style="margin-top:8px; background:#f3f3f3; color:#333; font-weight:600;">
+            Feedback / Comments
+          </div>
+          <div style="margin-top:10px;">
+            <div class="field">
+              <label for="comment">Write a review or comment</label>
+              <textarea name="message" id="comment" placeholder="Share your review or message..." required></textarea>
+            </div>
+          </div>
+
+          <div class="actions" style="margin-top:14px;">
+            <button class="btn secondary" type="reset">Reset</button>
+            <button class="btn" type="submit">Submit</button>
+            <a href="../index.html" class="back">Back</a>
+
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: Contact / office details -->
+      <div class="info-card">
+        <h3>Contact Us</h3>
+        <div class="muted">We're here to help — reach out any time.</div>
+
+        <div class="contact-item">
+          <div class="icon" aria-hidden="true">C</div>
+          <div>
+            <div style="font-weight:700">Call / WhatsApp</div>
+            <div style="color:#666;margin-top:4px">0315-0231591</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon" aria-hidden="true">E</div>
+          <div>
+            <div style="font-weight:700">Email</div>
+            <div style="color:#666;margin-top:4px">info@zakirealstate.com</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon" aria-hidden="true">L</div>
+          <div>
+            <div style="font-weight:700">Office</div>
+            <div style="color:#666;margin-top:4px">Main Branch Orangi Town Chisti Nagar</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer">
+      © <strong>ZAKI REAL STATE</strong> — All rights reserved.
+    </div>
+  </div>
+
+  <!-- Optional success redirect -->
+  <script>
+    // Optional: Friendly alert for submission (keeps form default submit behavior)
+    document.querySelector('.form').addEventListener('submit', function(e) {
+      // show message while form posts
+      alert('Thank you! Your form is being submitted...');
+      // allow form to submit normally to Web3Forms
+    });
+  </script>
+</body>
+</html>

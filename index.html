@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zaki Real Estate</title>
+  <style>
+    * {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #4a2b16;
+      margin: 0;
+      padding: 0;
+    }
+
+    .zaki-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #4a2b16;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 1100px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      gap: 20px;
+    }
+
+    /* ==== LEFT IMAGE ==== */
+    .zaki-left {
+      flex: 1 1 45%;
+      min-width: 280px;
+    }
+
+    .zaki-left img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ==== RIGHT SIDE CONTENT ==== */
+    .zaki-right {
+      flex: 1 1 45%;
+      background: #3a2412;
+      color: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      position: relative;
+      min-width: 280px;
+    }
+
+    .zaki-right h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .zaki-right h2 span {
+      color: #e74c3c;
+    }
+
+    .offer {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .zaki-btn {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 10px 22px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .zaki-btn:hover {
+      background: #e74c3c;
+    }
+
+    .zaki-info {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .zaki-link {
+      margin-top: 8px;
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* ==== CIRCLE IMAGE ==== */
+    .zaki-circle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      border-radius: 50%;
+      padding: 5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .zaki-circle img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* ==== RESPONSIVE DESIGN ==== */
+    @media (max-width: 900px) {
+      .zaki-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+      }
+
+      .zaki-left, .zaki-right {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      .zaki-right {
+        width: 100%;
+        margin-top: 15px;
+      }
+
+      .zaki-circle {
+        position: static;
+        margin: 20px auto 0;
+      }
+
+      .zaki-right h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .zaki-right {
+        padding: 18px;
+      }
+
+      .zaki-circle img {
+        width: 90px;
+        height: 90px;
+      }
+
+      .zaki-btn {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+      }
+
+      .offer {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="zaki-container">
+    <div class="zaki-left">
+      <img src="real.jpg" alt="Office Image">
+    </div>
+
+    <div class="zaki-right">
+      <h2><span>ZAKI</span> REAL STATE</h2>
+      <p class="offer">DISCOUNT <br><strong>30% OFF</strong></p>
+
+      <a href="open/index.html" class="zaki-btn">BOOK NOW</a>
+
+      <div class="zaki-info">
+        <p><strong>More Info:</strong></p>
+        <p>Address: Orangi Town, Chisti Nagar Near Bhashani Bakery</p>
+        <p><strong>Call:</strong> +92 315 0231591</p>
+      </div>
+
+      <div class="zaki-circle">
+        <img src="hou.jpg" alt="Houses Image">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
